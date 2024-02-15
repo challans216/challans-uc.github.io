@@ -68,14 +68,16 @@
 					<div class="row">
 						<div class="resume-main col-12 col-lg-8 col-xl-9   pe-0   pe-lg-5">
 							<section class="work-section py-3"> <!--Education-->
-								<h3 class="text-uppercase resume-section-heading mb-4">University of Cicninnati</h3>
+								<h3 class="text-uppercase resume-section-heading mb-4">Education</h3>
 								<div class="item mb-3">
 									<div class="item-heading row align-items-center mb-2">
-										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">Masters in Information Technology</h4>
-										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end"> Aug. 2023 - Dec. 2024 | Cincinnati, OH</div>
-										
+										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">University of Cicninnati</h4>
+										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end"> Aug. 2023 - Dec. 2024 | Cincinnati, OH</div>	
 									</div>
-                               					</div>
+                                    				<div class="item-content">
+									<p>Masters in Information Technology</p>
+                                    				</div>
+                                				</div>
                           				</section>
 							<section class="work-section py-3">
 								<h3 class="text-uppercase resume-section-heading mb-4">Work Experiences</h3>
@@ -149,6 +151,11 @@
 							</section><!--//project-section-->
 						</div><!--//resume-main-->
 						<aside class="resume-aside col-12 col-lg-4 col-xl-3 px-lg-4 pb-lg-4">
+							<div class = "item">
+                                				<div id="digital-clock"></div>
+								<canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
+			                   			<script src="https://waph-uc.github.io/clock.js"></script>
+                            				</div>
 							<section class="skills-section py-3">
 								<h3 class="text-uppercase resume-section-heading mb-4">Skills</h3>
 								<div class="item">
@@ -234,6 +241,18 @@
                 }
                 setInterval(displayTime,500);
             </script>
-
+	    <script type=text/javascript>
+			var canvas=document.getElementById("analog-clock");
+			var ctx=canvas.getContext("2d");
+			var radius = canvas.height/2;
+			ctx.translate(radius,radius);
+			radius=radius*0.90;
+			setInterval(drawClock,1000);
+			function drawClock(){
+				drawFace(ctx,radius);
+				drawNumbers(ctx,radius);
+				drawTime(ctx,radius);
+				}
+	    </script>
 </body>
 </html> 
