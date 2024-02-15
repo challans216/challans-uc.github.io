@@ -142,6 +142,9 @@
 											<li>Lead and deliver complex software systems</li>
 										</ul>
 									</div><!--//item-->
+									<div class = "item">
+                                        					<div id="digital-clock"></div>
+                                   					</div>
 									<div class="item">
 										<h4 class="item-title">Professional</h4>
 										<ul class="list-unstyled resume-skills-list">
@@ -214,6 +217,16 @@
 				</footer>
 				
 			</div><!--//main-wrapper-->
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+		crossorigin="anonymous">
+            	</script>
+            	<script>
+                function displayTime() {
+                    document.getElementById('digital-clock').innerHTML=" The current Time is : "+ Date();
+                }
+                setInterval(displayTime,500);
+            	</script>
 			
 
 </body>
