@@ -253,6 +253,12 @@
 				drawNumbers(ctx,radius);
 				drawTime(ctx,radius);
 				}
+		    	function printResult(result){
+			$("#response").html(result);
+			}
+	      		$.get("https://v2.jokeapi.dev/joke/Programming?type=single",function(result){
+				$("#response").html("Programming joke of the day: " +result.joke);
+				});
 	    </script>
 </body>
 </html> 
