@@ -261,5 +261,34 @@
 				$("#response").html("Programming joke of the day: " +result.joke);
 				});
 	    </script>
+	    <script>
+    		// Function to set or get the last visit date from cookies
+    		function getLastVisitDate() {
+        	const now = new Date();
+        	const lastVisit = document.cookie.replace(/(?:(?:^|.*;\s*)lastVisit\s*=\s*([^;]*).*$)|^.*$/, "$1");
+        
+        	if (lastVisit) {
+            	return new Date(lastVisit);
+        	} else {
+            	document.cookie = `lastVisit=${now.toUTCString()}`;
+            	return null;
+        }
+    }
+
+    // Function to display the welcome message
+    function displayWelcomeMessage() {
+        const lastVisitDate = getLastVisitDate();
+
+        if (lastVisitDate) {
+            const formattedLastVisit = lastVisitDate.toLocaleString();
+            alert(`Welcome back! Your last visit was ${formattedLastVisit}`);
+        } else {
+            alert('Welcome to my homepage!');
+        }
+    }
+
+    // Call the function to display the welcome message
+    displayWelcomeMessage();
+</script>
 </body>
 </html> 
