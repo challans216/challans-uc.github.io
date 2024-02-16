@@ -149,6 +149,16 @@
 										<h3>Joke of the Day</h3>
   										<p id="response">Loading joke...</p></div>
 									</div>
+									<div id="app" class="container">
+    										<h3>XKCD Comic Viewer with Vue.js</h3>
+    										<div v-if="comic" id="comic">
+										<h2>{{ comic.title }}</h2>
+										<img :src="comic.img" :alt="comic.alt">
+										 </div>
+										    <div v-else>
+										      <p>Loading...</p>
+										    </div>
+										  </div>
 								</div><!--//item-->
 							</section><!--//project-section-->
 						</div><!--//resume-main-->
@@ -228,7 +238,6 @@
 		        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
 		        crossorigin="anonymous">
             </script>
-	    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
             <script>
                 function displayTime() {
                     document.getElementById('digital-clock').innerHTML=" The current Time is : "+ Date();
@@ -283,17 +292,7 @@
     // Call the function to display the welcome message
     displayWelcomeMessage();
 </script>
-	<div id="app" class="container">
-    <h1>XKCD Comic Viewer with Vue.js</h1>
-    <div v-if="comic" id="comic">
-      <h2>{{ comic.title }}</h2>
-      <img :src="comic.img" :alt="comic.alt">
-    </div>
-    <div v-else>
-      <p>Loading...</p>
-    </div>
-  </div>
-
+	//code to display a comic
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   <script>
     new Vue({
