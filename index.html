@@ -20,29 +20,6 @@
 	
 	<!-- Theme CSS -->  
 	<link id="theme-style" rel="stylesheet" href="styleresume.css">
-	<style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f0f0f0;
-    }
-    .container {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #fff;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-      border-radius: 8px;
-    }
-  </style>
 </head> 
 
 <body>
@@ -168,6 +145,9 @@
 									<div class="item-content">
 										<li>Received an On-the-Spot (Team) Award for addressing significant production issues, preventing any larger impact.</li>
                                         <li>Received appreciation for exemplary support provided for production issues in client deployment system.</li>
+									<div class="joke">
+										<h1>Joke of the Day</h1>
+  										<p id="response">Loading joke...</p></div>
 									</div>
 								</div><!--//item-->
 							</section><!--//project-section-->
@@ -248,6 +228,7 @@
 		        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
 		        crossorigin="anonymous">
             </script>
+	    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
             <script>
                 function displayTime() {
                     document.getElementById('digital-clock').innerHTML=" The current Time is : "+ Date();
