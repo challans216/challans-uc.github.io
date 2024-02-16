@@ -18,7 +18,7 @@ As a part of non technical i have collected a bootstrap theme to make my resume 
 Some of the existing code like analog clock ,digital clock were used from the lab 1.
 Finally every screenshot was captured and set in a README.md file and converted into markdown format using pandoc tool.
 
-[https://github.com/challans216/waph-challans/blob/main/lab/lab1/README.md](https://github.com/challans216/waph-challans/blob/main/lab/lab1/README.md)
+[https://github.com/challans216/challans216.github.io/blob/main/project1/README.md](https://github.com/challans216/challans216.github.io/blob/main/project1/README.md)
 
 
 
@@ -30,11 +30,23 @@ Below are the screenshots of the data.
 Simple  HTML tags have been used to perform this.
 
 
-![Without any styling for resume](images/1.png) {width=300px height=300px}
+![Without any styling for resume](images/1.png){width=300px height=300px}
+
+
 
 ![2](images/2.png)
 
+
+
+
+
 ![3](images/4.png)
+
+
+
+
+The below screenshot provides you the link to the webpage which gives an over view of all hands-on.
+
 
 ![Link to webapplication html page](images/op1.png)
 
@@ -43,10 +55,11 @@ Simple  HTML tags have been used to perform this.
 Here i have used a open source bootstrap framework to add styling to my resume. Along with that i have also used a flag counter. To use that i have provided few details to generate it accordingly like the no of countries that can be displayed in the image and other factors which helped me to generate a link. I have copied that link and used in the website in the href attribute which helped me to achieve it.
 
 below are the screenshots:
-
+Note : Overall Styling can be seen in the attached webpage pdf
 
 
 ![flag counter](images/flag_counter.png)
+
 
 ## Part 3 -Technical Requirements
 
@@ -66,7 +79,7 @@ Similarilly , I have used another open source/public APi which can print my favo
 I tried to get the image resposne by button click.
 
 
-[!Cat API integration output](images/catAPI.png)
+![Cat API integration output](images/catAPI.png)
 
 
 
@@ -74,8 +87,12 @@ Finally i have written a code to remeber the client i.e cookies. I have took the
 when i first clicked the website it was able to generate the welcome message as  in the below screenshot.
 
 
-![first visit message](images/cookie1.png)
+![Cookies-first visit message](images/cookie1.png)
+
+
 
 From the next time it started to display the welcome message alobg with the date and time you last visited as in the below screenshot.
 
-![second visit message](images/Cookies.png)
+
+
+![Cookies-second visit message](images/Cookies.png)
