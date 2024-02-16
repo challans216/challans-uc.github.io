@@ -80,13 +80,6 @@
 								<h3 class="text-uppercase resume-section-heading mb-4">Education</h3>
 								<div class="item mb-3">
 									<div class="item-heading row align-items-center mb-2">
-										 <div id="app">
-    <h1>Random Cat Images</h1>
-    <button @click="getRandomCat">Get Random Cat</button>
-    <div v-if="loading">Loading...</div>
-    <div v-if="error">{{ error }}</div>
-    <img v-if="!loading && catImage" :src="catImage" alt="Random Cat">
-  </div>
 										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">University of Cicninnati</h4>
 										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end"> Aug. 2023 - Dec. 2024 | Cincinnati, OH</div>	
 									</div>
@@ -166,6 +159,13 @@
 										<h3>Joke of the Day</h3>
   										<p id="response">Loading joke...</p></div>
 									</div>
+									 <div id="app">
+    									<h3>My favorite pet</h3>
+									    <button @click="getRandomCat">Click here to see cats.</button>
+									    <div v-if="loading">Loading...</div>
+									    <div v-if="error">{{ error }}</div>
+									    <img v-if="!loading && catImage" :src="catImage" alt="Random Cat">
+									  </div>
 								</div><!--//item-->
 							</section><!--//project-section-->
 						</div><!--//resume-main-->
@@ -299,43 +299,35 @@
     // Call the function to display the welcome message
     displayWelcomeMessage();
 </script>
-	//code to display a comic
+	//code to display a cat
   <script>
     // Vue app instance
     const app = new Vue({
       el: '#app',
       data: {
-        catImage: null, // URL of the random cat image
-        loading: false, // Loading indicator
-        error: '', // Error message
+        catImage: null, 
+        loading: false,
+        error: '', 
       },
       methods: {
         getRandomCat() {
-          // Set loading indicator to true
           this.loading = true;
-          // Clear previous error message
           this.error = '';
 
-          // Make an HTTP request to The Cat API
           fetch('https://api.thecatapi.com/v1/images/search')
             .then(response => {
-              // Check if the response is successful
               if (!response.ok) {
-                throw new Error('Failed to fetch cat image');
+                throw new Error('Error, unable to fetch cat image');
               }
-              // Parse the JSON response
+
               return response.json();
             })
             .then(data => {
-              // Extract the URL of the cat image
               this.catImage = data[0].url;
-              // Set loading indicator to false
               this.loading = false;
             })
             .catch(error => {
-              // Set error message
               this.error = error.message;
-              // Set loading indicator to false
               this.loading = false;
             });
         }
