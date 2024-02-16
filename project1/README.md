@@ -30,7 +30,7 @@ Below are the screenshots of the data.
 Simple  HTML tags have been used to perform this.
 
 
-![Without any styling for resume](images/1.png)
+![Without any styling for resume](images/1.png) {width=300px height=300px}
 
 ![2](images/2.png)
 
@@ -66,7 +66,7 @@ Similarilly , I have used another open source/public APi which can print my favo
 I tried to get the image resposne by button click.
 
 
-!Cat API integration output](images/catAPI.png)
+[!Cat API integration output](images/catAPI.png)
 
 
 
