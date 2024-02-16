@@ -146,7 +146,7 @@
 										<li>Received an On-the-Spot (Team) Award for addressing significant production issues, preventing any larger impact.</li>
                                         <li>Received appreciation for exemplary support provided for production issues in client deployment system.</li>
 									<div class="joke">
-										<h1>Joke of the Day</h1>
+										<h3>Joke of the Day</h3>
   										<p id="response">Loading joke...</p></div>
 									</div>
 								</div><!--//item-->
@@ -250,8 +250,8 @@
 		    	function printResult(result){
 			$("#response").html(result);
 			}
-	      		$.get("https://v2.jokeapi.dev/joke/Programming?type=single",function(result){
-				$("#response").html("Programming joke of the day: " +result.joke);
+	      		$.get("https://v2.jokeapi.dev/joke/Any",function(result){
+				$("#response").html("joke of the day: " +result.joke);
 				});
 	    </script>
 	    <script>
