@@ -20,6 +20,8 @@
 	
 	<!-- Theme CSS -->  
 	<link id="theme-style" rel="stylesheet" href="styleresume.css">
+	<!--including vue.js -->
+	 <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head> 
 
 <body>
@@ -70,6 +72,13 @@
 								<h3 class="text-uppercase resume-section-heading mb-4">Education</h3>
 								<div class="item mb-3">
 									<div class="item-heading row align-items-center mb-2">
+										 <div id="app">
+    <h1>Random Cat Images</h1>
+    <button @click="getRandomCat">Get Random Cat</button>
+    <div v-if="loading">Loading...</div>
+    <div v-if="error">{{ error }}</div>
+    <img v-if="!loading && catImage" :src="catImage" alt="Random Cat">
+  </div>
 										<h4 class="item-title col-12 col-md-6 col-lg-8 mb-2 mb-md-0">University of Cicninnati</h4>
 										<div class="item-meta col-12 col-md-6 col-lg-4 text-muted text-start text-md-end"> Aug. 2023 - Dec. 2024 | Cincinnati, OH</div>	
 									</div>
@@ -283,20 +292,45 @@
     displayWelcomeMessage();
 </script>
 	//code to display a comic
-  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   <script>
-    new Vue({
+    // Vue app instance
+    const app = new Vue({
       el: '#app',
       data: {
-        comic: null
+        catImage: null, // URL of the random cat image
+        loading: false, // Loading indicator
+        error: '', // Error message
       },
-      mounted() {
-        fetch('https://xkcd.com/info.0.json')
-          .then(response => response.json())
-          .then(data => {
-            this.comic = data;
-          })
-          .catch(error => console.error('Error fetching XKCD comic:', error));
+      methods: {
+        getRandomCat() {
+          // Set loading indicator to true
+          this.loading = true;
+          // Clear previous error message
+          this.error = '';
+
+          // Make an HTTP request to The Cat API
+          fetch('https://api.thecatapi.com/v1/images/search')
+            .then(response => {
+              // Check if the response is successful
+              if (!response.ok) {
+                throw new Error('Failed to fetch cat image');
+              }
+              // Parse the JSON response
+              return response.json();
+            })
+            .then(data => {
+              // Extract the URL of the cat image
+              this.catImage = data[0].url;
+              // Set loading indicator to false
+              this.loading = false;
+            })
+            .catch(error => {
+              // Set error message
+              this.error = error.message;
+              // Set loading indicator to false
+              this.loading = false;
+            });
+        }
       }
     });
   </script>
